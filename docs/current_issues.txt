@@ -1,0 +1,17 @@
+Running the app on two devices
+One device is latest version of android with both permissions location + nearby devices (A)
+One device has older version of android so no nearby devices (B)
+Bluetooth + Wifi is enabled for both devices
+
+A -> Node-state argus_node, Connected Peers(1) , Can create alerts
+B -> Node state argus_field, Connected_Peers(0), Can create alerts 
+
+note both have the same GPS Location (as they are at the same location during testing)
+Alerts are not getting passed from A -> B or B -> A even after refreshing
+
+If I restart app on both devices here are the observations:
+The Known alerts resets to 0 for both devices everything else remains same
+But Now both devices A & B Node-state argus_field 
+we can still create alerts but they don't propogate to other device 
+
+Both are android devices and all the commands used are present in command.md file 

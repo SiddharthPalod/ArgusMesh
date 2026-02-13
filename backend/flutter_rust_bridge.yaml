@@ -1,0 +1,4 @@
+rust_input: crate::core::api
+rust_root: .
+dart_output: ../argus_frontend/lib/bridge_generated.dart/rust_api/bridge_definitions.dart
+c_output: ../argus_frontend/ios/Runner/bridge_generated.h
