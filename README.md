@@ -1,12 +1,6 @@
 # Argus Mesh
-
 ### Secure Offline Alert Propagation System
-
 **Rust Mesh Core + Flutter UI (FFI)**
-
----
-
-## 1️⃣ Project Mission (Final, Crisp)
 
 > **Ensure critical border alerts propagate reliably even when communication infrastructure is unavailable, jammed, or compromised.**
 
@@ -189,115 +183,6 @@ Critical alerts **always transmit first**.
 * All alerts signed
 * Invalid signatures dropped immediately
 
-> This is enough to credibly claim **secure-by-design**.
-
----
-
-## 9️⃣ Flutter UI Responsibilities (ONLY THIS)
-
-### 📱 Screens
-
-* Alert creation (1 tap)
-* Alert list
-* Map view (clusters + confidence)
-* Node health overview
-
-### 🧠 What Flutter Does NOT Do
-
-❌ Routing
-❌ Deduplication
-❌ Encryption
-❌ Peer management
-
-Flutter is **just a client**.
-
----
-
-## 🔌 FFI Boundary (Clean & Minimal)
-
-### Rust → Dart API (example)
-
-```text
-init_node()
-create_alert(type, lat, lon, severity)
-get_known_alerts()
-get_node_state()
-```
-
-No complex callbacks initially.
-Polling is fine for v1.
-
----
-
-## 1️⃣0️⃣ Persistence Strategy
-
-* Rust core uses:
-
-  * SQLite / sled
-* Stores:
-
-  * Known alerts
-  * Forwarding history
-  * Node metadata
-
-Data survives app restarts & crashes.
-
----
-
-## 1️⃣1️⃣ Internet Sync (Optional but Realistic)
-
-When **any node** gets internet:
-
-* Upload encrypted alert summaries
-* Pull missing updates
-* Merge states safely
-
-Cloud is **not required** for correctness.
-
----
-
-## 1️⃣2️⃣ Development Phases (FINAL)
-
-### Phase 1 — Rust Core (Weeks 1–2)
-
-* Alert struct
-* Routing engine
-* Dedup + TTL
-* Unit tests
-
-👉 No Flutter yet.
-
----
-
-### Phase 2 — BLE Transport (Week 3)
-
-* Device discovery
-* Message exchange
-* Stress testing
-
----
-
-### Phase 3 — Flutter + FFI (Week 4)
-
-* UI scaffolding
-* Rust bindings
-* Local testing
-
----
-
-### Phase 4 — Security Hardening (Week 5)
-
-* Encryption
-* Signing
-* Tamper rejection
-
----
-
-### Phase 5 — Recovery & Failure Testing (Week 6)
-
-* Long offline periods
-* Node churn
-* Battery constraints
 
 ---
 
@@ -308,12 +193,4 @@ Cloud is **not required** for correctness.
 ✅ Doesn’t flood the network
 ✅ Doesn’t trust the UI
 ✅ Recovers after hours offline
-
-This is the difference between a demo and a system.
-
----
-
-## 1️⃣4️⃣ README Positioning (FINAL)
-
-> **Border Alert Mesh is a secure, offline-first alert propagation system designed to function during communication blackouts caused by infrastructure failure or electronic warfare. Built with a memory-safe Rust networking core and a cross-platform Flutter interface.**
 ---
